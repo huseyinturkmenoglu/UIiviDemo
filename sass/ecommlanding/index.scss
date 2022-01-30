@@ -1,0 +1,11 @@
+@import '../../iviDemo/index.scss';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @include fontFamily('Lato');
+}
+
+@import 'nav.scss';
