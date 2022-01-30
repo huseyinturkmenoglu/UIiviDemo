@@ -3,15 +3,21 @@
 
 @import 'variables';
 
+// base mixins
+@mixin fontFamily ($ff) {
+  font-family: $ff, sans-serif;
+}
+
 /* reset styles */
 * {
   color: inherit;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: Poppins;
+  @include fontFamily('Poppins');
 }
 
 ul {
@@ -45,6 +51,9 @@ button {
   background: $primary;
   border-radius: $base-border-radius;
   padding: $base-padding;
+}
+textarea:focus, input:focus {
+  outline: none;
 }
 .error {
   color: $error;

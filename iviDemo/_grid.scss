@@ -7,7 +7,9 @@ $grid-gaps: (
     "2": 20px,
     "3": 30px,
 );
-$layout-values: flex-start, flex-end, center, space-between, space-around;
+$justify-values: flex-start, flex-end, center, space-between, space-around;
+$align-items-values: flex-start, flex-end, center, stretch, baseline;
+$align-content-values: flex-start, flex-end, center, stretch, space-between, space-around;
 
 // base layout classes
 .container {
@@ -34,9 +36,22 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 }
 
 // justify content classes
-@each $val in $layout-values {
+@each $val in $justify-values {
     .justify-#{$val} {
         justify-content: $val;
+    }
+}
+
+// align-items content classes
+@each $val in $align-items-values {
+    .align-items-#{$val} {
+        align-items: $val;
+    }
+}
+// align-content content classes
+@each $val in $align-content-values {
+    .align-content-#{$val} {
+        align-content: $val;
     }
 }
 
