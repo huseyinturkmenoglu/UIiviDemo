@@ -1,0 +1,112 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+);
+$justify-values: flex-start, flex-end, center, space-between, space-around;
+$align-items-values: flex-start, flex-end, center, stretch, baseline;
+$align-content-values: flex-start, flex-end, center, stretch, space-between, space-around;
+
+// base layout classes
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// grid gaps
+@each $key, $val in $grid-gaps {
+    .gap-#{$key} > * {
+        padding: $val;
+    }
+    .gap-#{$key} {
+        margin-left: -$val;
+        margin-right: -$val;
+    }
+}
+
+// justify content classes
+@each $val in $justify-values {
+    .justify-#{$val} {
+        justify-content: $val;
+    }
+}
+
+// align-items content classes
+@each $val in $align-items-values {
+    .align-items-#{$val} {
+        align-items: $val;
+    }
+}
+// align-content content classes
+@each $val in $align-content-values {
+    .align-content-#{$val} {
+        align-content: $val;
+    }
+}
+
+// col classes
+@include xs {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xs {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include sm {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-sm {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include md {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-md {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include lg {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-lg {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include xl {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xl {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
+@include xxl {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xxl {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100%, $grid-columns);
+        }
+    }
+}
